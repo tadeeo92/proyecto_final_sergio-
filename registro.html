@@ -1,0 +1,27 @@
+<head>
+    <link rel="stylesheet" href="registro.css">
+</head>
+<body>
+    <header> 
+        <img src="c:\Users\perez\Downloads\IMG-20241025-WA00422.jpg" width="80" height="80"> 
+        REGISTRO 
+    </header>
+
+    <main>
+        <div class="container">
+            <form id="registroForm" onsubmit="return register(event)">
+                <input type="text" id="username" name="username" placeholder="Nombre de usuario" required>
+                <br>
+                <input type="email" id="email" name="email" placeholder="Ingresa tu email" required>
+                <br>
+                <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+                <br>
+                <input type="submit" value="Registrarse">
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Todos los derechos reservados</p>
+    </footer>
+</body>

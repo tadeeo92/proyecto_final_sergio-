@@ -1,0 +1,183 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@500&display=swap');
+
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #FFCC80, #FFE0B2);
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    background: linear-gradient(90deg, #FF9800, #FFB74D);
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: slideDown 1s ease;
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    margin: 0;
+    color: white;
+}
+
+header h1 img {
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    font-weight: bold;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #FFD54F;
+}
+
+/* Animaciones */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(255, 152, 0, 0.8);
+    }
+}
+
+/* Contenido principal */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    display: flex; /* Añadir flexbox para centrar elementos */
+    flex-direction: column; /* Organizar en columnas */
+    align-items: center; /* Centrar los elementos hijos */
+}
+
+/* Campos de entrada */
+input[type="text"], input[type="password"] {
+    width: 90%; /* Ajustar el ancho para centrar */
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    transition: border 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para los campos de entrada */
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    outline: none;
+    border-color: #FF9800;
+    box-shadow: 0 0 8px rgba(255, 152, 0, 0.5);
+}
+
+/* Botones */
+button, input[type="submit"] {
+    background: linear-gradient(90deg, #FFA726, #FB8C00);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    width: 90%; /* Ajustar el ancho para centrar */
+    transition: background 0.3s ease;
+    margin-bottom: 15px;
+    animation: buttonPulse 2s infinite;
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.5); /* Luz alrededor del botón */
+}
+
+button:hover, input[type="submit"]:hover {
+    background: linear-gradient(90deg, #FB8C00, #EF6C00);
+    box-shadow: 0 0 20px rgba(255, 152, 0, 0.8); /* Luz más intensa al pasar el cursor */
+}
+
+#registroBtn {
+    background: linear-gradient(90deg, #f9a825, #ffeb3b);
+    color: white;
+    animation: buttonPulse 2s infinite;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5); /* Luz alrededor del botón */
+}
+
+#registroBtn:hover {
+    background: linear-gradient(90deg, #f57f17, #fdd835);
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.8); /* Luz más intensa al pasar el cursor */
+}
+
+/* Pie de página */
+footer {
+    background: #FF9800;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    margin-top: auto;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para el pie de página */
+}
