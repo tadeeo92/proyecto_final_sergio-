@@ -9,19 +9,28 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(135deg, #FFCC80, #FFE0B2);
-    color: #333;
+    background: linear-gradient(135deg, #0A3D62, #000000); /* Degradado de azul oscuro a negro */
+    color: #EAF2F8;
 }
 
 /* Encabezado */
 header {
-    background: linear-gradient(90deg, #FF9800, #FFB74D);
-    color: white;
+    background: linear-gradient(90deg, #000000, #4A69BD); /* Degradado de negro a azul oscuro */
+    color: #EAF2F8;
     padding: 20px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Poppins', sans-serif;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     animation: slideDown 1s ease;
+    font-size: 2em;
+    font-weight: bold;
+    gap: 15px; /* Espacio entre el logo y el texto */
+}
+
+header img {
+    border-radius: 50%;
 }
 
 /* Animaciones */
@@ -45,50 +54,63 @@ header {
     }
 }
 
-/* Contenedor principal */
-.container {
-    flex: 1;
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    padding: 20px;
-    animation: fadeIn 1.5s ease; /* Animación de aparición */
+@keyframes buttonPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(74, 105, 189, 0.8);
+    }
 }
 
-/* Estilos del formulario */
-form {
-    background: white;
+/* Contenido principal */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    background: #111111; /* Fondo negro suave para contraste */
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     padding: 30px;
-    width: 300px; /* Ancho del formulario */
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Campos de entrada */
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 90%; /* Ajustar el ancho para centrar */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 90%;
     margin-bottom: 15px;
     padding: 12px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #A3CB38;
     font-size: 1em;
+    background: #222222; /* Fondo negro suave */
+    color: #EAF2F8;
     transition: border 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
     outline: none;
-    border-color: #FF9800;
-    box-shadow: 0 0 8px rgba(255, 152, 0, 0.5);
+    border-color: #34ACE0;
+    box-shadow: 0 0 8px rgba(52, 172, 224, 0.5);
 }
 
-/* Botón de envío */
+/* Botón de registro */
 input[type="submit"] {
-    background: linear-gradient(90deg, #FFA726, #FB8C00);
+    background: linear-gradient(90deg, #34ACE0, #1B9CFC);
     color: white;
     border: none;
     padding: 12px;
@@ -96,21 +118,26 @@ input[type="submit"] {
     cursor: pointer;
     font-size: 1em;
     font-weight: bold;
+    width: 90%;
     transition: background 0.3s ease;
-    margin-top: 10px; /* Espaciado superior */
+    margin-bottom: 15px;
+    animation: buttonPulse 2s infinite;
+    box-shadow: 0 0 10px rgba(27, 156, 252, 0.5);
 }
 
 input[type="submit"]:hover {
-    background: linear-gradient(90deg, #FB8C00, #EF6C00);
+    background: linear-gradient(90deg, #3B3B98, #182C61);
+    box-shadow: 0 0 20px rgba(27, 156, 252, 0.8);
 }
 
 /* Pie de página */
 footer {
-    background: #FF9800;
-    color: white;
+    background: linear-gradient(90deg, #000000, #4A69BD); /* Mismo degradado que el header */
+    color: #EAF2F8;
     text-align: center;
     padding: 15px;
     font-size: 0.9em;
     margin-top: auto;
     font-family: 'Poppins', sans-serif;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
 }
