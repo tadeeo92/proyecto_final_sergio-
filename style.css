@@ -9,20 +9,20 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(135deg, #FFCC80, #FFE0B2);
-    color: #333;
+    background: linear-gradient(135deg, #0A3D62, #000000); /* Degradado de azul oscuro a negro */
+    color: #EAF2F8;
 }
 
 /* Encabezado */
 header {
-    background: linear-gradient(90deg, #FF9800, #FFB74D);
-    color: white;
+    background: linear-gradient(90deg, #000000, #4A69BD); /* Degradado de negro a azul oscuro */
+    color: #EAF2F8;
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-family: 'Poppins', sans-serif;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     animation: slideDown 1s ease;
 }
 
@@ -31,7 +31,7 @@ header h1 {
     align-items: center;
     font-size: 2em;
     margin: 0;
-    color: white;
+    color: #EAF2F8;
 }
 
 header h1 img {
@@ -50,17 +50,17 @@ nav ul {
 nav ul li {
     display: inline;
     font-weight: bold;
-    color: white;
+    color: #EAF2F8;
 }
 
 nav a {
-    color: white;
+    color: #EAF2F8;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #FFD54F;
+    color: #A3CB38; /* Color de acento brillante al pasar el cursor */
 }
 
 /* Animaciones */
@@ -87,11 +87,11 @@ nav a:hover {
 @keyframes buttonPulse {
     0%, 100% {
         transform: scale(1);
-        box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
     50% {
         transform: scale(1.05);
-        box-shadow: 0 0 20px rgba(255, 152, 0, 0.8);
+        box-shadow: 0 0 20px rgba(74, 105, 189, 0.8);
     }
 }
 
@@ -108,37 +108,39 @@ main {
 .container {
     width: 100%;
     max-width: 400px;
-    background: white;
+    background: #111111; /* Fondo negro suave para contraste */
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     padding: 30px;
     text-align: center;
-    display: flex; /* Añadir flexbox para centrar elementos */
-    flex-direction: column; /* Organizar en columnas */
-    align-items: center; /* Centrar los elementos hijos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Campos de entrada */
 input[type="text"], input[type="password"] {
-    width: 90%; /* Ajustar el ancho para centrar */
+    width: 90%;
     margin-bottom: 15px;
     padding: 12px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #A3CB38;
     font-size: 1em;
+    background: #222222; /* Fondo negro suave */
+    color: #EAF2F8;
     transition: border 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para los campos de entrada */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 input[type="text"]:focus, input[type="password"]:focus {
     outline: none;
-    border-color: #FF9800;
-    box-shadow: 0 0 8px rgba(255, 152, 0, 0.5);
+    border-color: #34ACE0;
+    box-shadow: 0 0 8px rgba(52, 172, 224, 0.5);
 }
 
 /* Botones */
 button, input[type="submit"] {
-    background: linear-gradient(90deg, #FFA726, #FB8C00);
+    background: linear-gradient(90deg, #34ACE0, #1B9CFC);
     color: white;
     border: none;
     padding: 12px;
@@ -146,38 +148,38 @@ button, input[type="submit"] {
     cursor: pointer;
     font-size: 1em;
     font-weight: bold;
-    width: 90%; /* Ajustar el ancho para centrar */
+    width: 90%;
     transition: background 0.3s ease;
     margin-bottom: 15px;
     animation: buttonPulse 2s infinite;
-    box-shadow: 0 0 10px rgba(255, 152, 0, 0.5); /* Luz alrededor del botón */
+    box-shadow: 0 0 10px rgba(27, 156, 252, 0.5);
 }
 
 button:hover, input[type="submit"]:hover {
-    background: linear-gradient(90deg, #FB8C00, #EF6C00);
-    box-shadow: 0 0 20px rgba(255, 152, 0, 0.8); /* Luz más intensa al pasar el cursor */
+    background: linear-gradient(90deg, #3B3B98, #182C61);
+    box-shadow: 0 0 20px rgba(27, 156, 252, 0.8);
 }
 
 #registroBtn {
-    background: linear-gradient(90deg, #f9a825, #ffeb3b);
+    background: linear-gradient(90deg, #26c281, #2ecc71);
     color: white;
     animation: buttonPulse 2s infinite;
-    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5); /* Luz alrededor del botón */
+    box-shadow: 0 0 10px rgba(39, 174, 96, 0.5);
 }
 
 #registroBtn:hover {
-    background: linear-gradient(90deg, #f57f17, #fdd835);
-    box-shadow: 0 0 20px rgba(255, 193, 7, 0.8); /* Luz más intensa al pasar el cursor */
+    background: linear-gradient(90deg, #218c74, #27ae60);
+    box-shadow: 0 0 20px rgba(39, 174, 96, 0.8);
 }
-
 /* Pie de página */
 footer {
-    background: #FF9800;
-    color: white;
+    background: linear-gradient(90deg, #000000, #4A69BD); /* Mismo degradado que el header */
+    color: #EAF2F8;
     text-align: center;
     padding: 15px;
     font-size: 0.9em;
     margin-top: auto;
     font-family: 'Poppins', sans-serif;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para el pie de página */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Sombra para el pie de página */
 }
+
