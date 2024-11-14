@@ -9,15 +9,32 @@
 <body>
 
 <header>>
-    <h1><img src="c:\Users\perez\Downloads\IMG-20241025-WA00422.jpg."  width="80" height="80">MadeWork</h1>
-    <nav>
-        <ul>
-            <li>Inicio</li>
-            <li>Galería</li>
-            <li><a href="contacto.html">  Contáctanos</li></a>  </ul>
-    </nav>
+        <h1><img src="WhatsApp Image 2024-11-08 at 7.15.01 PM.jpeg" width="80" height="80"> Mi Página</h1>
+        <nav>
+            <!-- Menú Hamburguesa -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!-- Menú de navegación -->
+            <ul id="nav-list">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
 </header>
+<script>
+const menuToggle = document.getElementById('menu-toggle');
+const navList = document.getElementById('nav-list');
 
+// Agregar un evento de clic al botón hamburguesa
+menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('active');  // Agregar/Eliminar la clase 'active' para mostrar/ocultar el menú
+});
+</script>
 <main>
     <div class="container">
         <form id="loginform" onsubmit="return login(event)">
@@ -39,3 +56,4 @@
 <script src="appp.js"></script>
 </body>
 </html>
+
