@@ -1,0 +1,213 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@500&display=swap');
+
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0A3D62, #000000); /* Degradado de azul oscuro a negro */
+    color: #EAF2F8;
+}
+
+/* Encabezado */
+header {
+    background: linear-gradient(90deg, #000000, #4A69BD); /* Degradado de negro a azul oscuro */
+    color: #EAF2F8;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: slideDown 1s ease;
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    margin: 0;
+    color: #EAF2F8;
+}
+
+/* Menú de navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    font-weight: bold;
+    color: #EAF2F8;
+}
+
+nav a {
+    color: #EAF2F8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #A3CB38;
+}
+
+/* Estilo para los campos de entrada */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Hace que los campos ocupen todo el ancho disponible */
+    max-width: 500px; /* Establece un ancho máximo para evitar que se vean demasiado anchos */
+    border-radius: 8px; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Borde gris claro */
+    padding: 12px; /* Espaciado interno */
+    font-size: 1em; /* Tamaño de fuente */
+    transition: border 0.3s ease; /* Transición suave para el borde */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para los campos */
+    margin-bottom: 15px; /* Espaciado entre los campos */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none; /* Sin borde de enfoque predeterminado */
+    border-color: #FF9800; /* Color del borde al enfocar */
+    box-shadow: 0 0 8px rgba(255, 152, 0, 0.5); /* Sombra al enfocar */
+}
+
+/* Estilo para el botón de enviar */
+input[type="submit"] {
+    background: linear-gradient(90deg, #FFA726, #FB8C00);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.5); /* Luz alrededor del botón */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(90deg, #FB8C00, #EF6C00);
+    box-shadow: 0 0 20px rgba(255, 152, 0, 0.8); /* Luz más intensa al pasar el cursor */
+}
+
+/* Contenedor del formulario */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #111111; /* Fondo negro suave para contraste */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todos los elementos en el eje horizontal */
+    justify-content: center; /* Centra los elementos en el eje vertical */
+}
+
+/* Estilos del pie de página */
+footer {
+    background: linear-gradient(90deg, #000000, #4A69BD); /* Mismo degradado que el header */
+    color: #EAF2F8;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    margin-top: auto;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Sombra para el pie de página */
+}
+
+/* Media Queries para Responsividad */
+
+/* Dispositivos móviles (hasta 600px) */
+@media screen and (max-width: 600px) {
+    /* Ajustar encabezado */
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    /* Cambiar la disposición del menú en móviles */
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    nav ul li {
+        font-size: 1.1em;
+    }
+
+    /* Ajustar formulario en dispositivos pequeños */
+    .container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Tabletas (601px - 1024px) */
+@media screen and (max-width: 1024px) {
+    /* Ajustes generales */
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    /* Ajustar el contenedor */
+    .container {
+        padding: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    input[type="submit"] {
+        width: 95%;
+        padding: 11px;
+    }
+}
+
+/* Escritorios grandes (más de 1024px) */
+@media screen and (min-width: 1025px) {
+    /* Para pantallas más grandes, el diseño es estándar */
+    .container {
+        max-width: 800px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        max-width: 500px;
+    }
+
+    input[type="submit"] {
+        max-width: 500px;
+    }
+}
