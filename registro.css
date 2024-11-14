@@ -23,7 +23,6 @@ header {
     justify-content: center;
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    animation: slideDown 1s ease;
     font-size: 2em;
     font-weight: bold;
     gap: 15px; /* Espacio entre el logo y el texto */
@@ -140,4 +139,69 @@ footer {
     margin-top: auto;
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Queries para Responsividad */
+
+/* Dispositivos móviles (hasta 600px) */
+@media screen and (max-width: 600px) {
+    /* Ajustes en el encabezado */
+    header {
+        flex-direction: column;
+        font-size: 1.5em;
+        gap: 10px;
+    }
+
+    /* Ajustes en la disposición del contenedor */
+    .container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Tabletas (601px - 1024px) */
+@media screen and (max-width: 1024px) {
+    /* Ajustes en el encabezado */
+    header {
+        font-size: 1.8em;
+    }
+
+    /* Ajustes en la disposición del contenedor */
+    .container {
+        padding: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 95%;
+        padding: 11px;
+    }
+}
+
+/* Escritorios grandes (más de 1024px) */
+@media screen and (min-width: 1025px) {
+    /* Para pantallas más grandes, el diseño es estándar */
+    .container {
+        max-width: 400px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        max-width: 400px;
+    }
+
+    input[type="submit"] {
+        max-width: 400px;
+    }
 }
