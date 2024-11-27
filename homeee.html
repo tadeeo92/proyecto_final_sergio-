@@ -9,10 +9,13 @@
 <body>
 
 <header>
-    <h1><img src="WhatsApp Image 2024-11-08 at 7.15.01 PM.jpeg"  width="80" height="80">Asistente de Tareas</h1>
+    <h1><img src="WhatsApp Image 2024-11-08 at 7.15.01 PM.jpeg" width="80" height="80">Asistente de Tareas</h1>
     <nav>
         <ul>
-            <li><a href="contacto.html">Contacto</a></li>
+            <li>
+                <a href="index.html">Cerrar sesión</a>
+                <a href="contacto.html">Contacto</a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -20,7 +23,7 @@
 <main>
     <div class="container">
         <form id="taskForm">
-            <h2>Añadir Nueva Tarea</h2>
+            <h2>Añadir o Editar Tarea</h2>
             <input type="text" id="taskDescription" placeholder="Descripción de la tarea" required>
             <input type="text" id="subject" placeholder="Asignatura" required> <!-- Campo de Asignatura -->
             <input type="date" id="dueDate" required>
@@ -29,6 +32,10 @@
         </form>
         
         <h2>Lista de Tareas</h2>
+        
+        <!-- Campo de búsqueda para filtrar tareas -->
+        <input type="text" id="searchInput" placeholder="Buscar tarea...">
+        
         <ul id="taskList"></ul>
     </div>
 </main>
@@ -37,6 +44,124 @@
     <p>© 2024 Todos los derechos reservados</p>
 </footer>
 
-<script src="inicio.js"></script>
+<!-- Aquí va el código JavaScript -->
+<script>
+    // Elementos del DOM
+    const taskForm = document.getElementById('taskForm');
+    const taskDescription = document.getElementById('taskDescription');
+    const subject = document.getElementById('subject');
+    const dueDate = document.getElementById('dueDate');
+    const time = document.getElementById('time');
+    const taskList = document.getElementById('taskList');
+    const searchInput = document.getElementById('searchInput');
+
+    // Array para almacenar las tareas
+    let tasks = [];
+    let editingTaskIndex = null; // Variable para saber si estamos editando una tarea
+
+    // Función para renderizar la lista de tareas
+    function renderTaskList() {
+        // Limpiar la lista de tareas antes de volver a renderizarla
+        taskList.innerHTML = '';
+        
+        // Filtrar las tareas si hay texto en el campo de búsqueda
+        const searchTerm = searchInput.value.toLowerCase();
+        const filteredTasks = tasks.filter(task => {
+            return task.description.toLowerCase().includes(searchTerm) || task.subject.toLowerCase().includes(searchTerm);
+        });
+        
+        // Mostrar las tareas filtradas
+        filteredTasks.forEach((task, index) => {
+            const li = document.createElement('li');
+            li.textContent = `${task.description} - ${task.subject} - ${task.dueDate} ${task.time}`;
+
+            // Si la tarea está completada, aplicamos un estilo de "completado"
+            if (task.completed) {
+                li.style.textDecoration = 'line-through';
+                li.style.color = 'gray';
+            }
+
+            // Botón de editar
+            const editButton = document.createElement('button');
+            editButton.textContent = 'Editar';
+            editButton.addEventListener('click', () => editTask(index)); // Llamamos a la función de editar
+
+            // Botón de eliminar
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Eliminar';
+            deleteButton.addEventListener('click', () => deleteTask(index)); // Llamamos a la función de eliminar
+
+            // Botón de completar
+            const completeButton = document.createElement('button');
+            completeButton.textContent = task.completed ? 'Marcar como pendiente' : 'Marcar como completada';
+            completeButton.addEventListener('click', () => toggleComplete(index)); // Llamamos a la función de completar
+
+            // Añadir los botones al <li>
+            li.appendChild(editButton);
+            li.appendChild(deleteButton);
+            li.appendChild(completeButton);
+
+            // Añadir la tarea al listado
+            taskList.appendChild(li);
+        });
+    }
+
+    // Función para agregar o editar tarea
+    taskForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const newTask = {
+            description: taskDescription.value,
+            subject: subject.value,
+            dueDate: dueDate.value,
+            time: time.value,
+            completed: false // Inicialmente, las tareas no están completadas
+        };
+
+        if (editingTaskIndex !== null) {
+            // Si estamos editando una tarea, la actualizamos
+            tasks[editingTaskIndex] = newTask;
+            editingTaskIndex = null; // Resetear el índice de edición
+        } else {
+            // Si no estamos editando, agregamos la tarea como nueva
+            tasks.push(newTask);
+        }
+
+        // Limpiar el formulario
+        taskDescription.value = '';
+        subject.value = '';
+        dueDate.value = '';
+        time.value = '';
+
+        // Renderizar la lista de tareas actualizada
+        renderTaskList();
+    });
+
+    // Función para editar una tarea
+    function editTask(index) {
+        const task = tasks[index];
+        taskDescription.value = task.description;
+        subject.value = task.subject;
+        dueDate.value = task.dueDate;
+        time.value = task.time;
+        editingTaskIndex = index; // Guardamos el índice de la tarea que estamos editando
+    }
+
+    // Función para eliminar una tarea
+    function deleteTask(index) {
+        tasks.splice(index, 1); // Eliminar la tarea del array
+        renderTaskList(); // Volver a renderizar la lista de tareas
+    }
+
+    // Función para marcar una tarea como completada o pendiente
+    function toggleComplete(index) {
+        tasks[index].completed = !tasks[index].completed; // Cambiar el estado de completado
+        renderTaskList(); // Volver a renderizar la lista de tareas
+    }
+
+    // Evento para filtrar tareas en tiempo real
+    searchInput.addEventListener('input', renderTaskList);
+</script>
+
 </body>
 </html>
