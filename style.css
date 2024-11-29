@@ -64,57 +64,6 @@ nav a:hover {
     color: #A3CB38; /* Color de acento brillante al pasar el cursor */
 }
 
-/* Menú hamburguesa */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-}
-
-.menu-toggle .bar {
-    width: 30px;
-    height: 3px;
-    background-color: #EAF2F8;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-}
-
-/* Estilos del menú cuando se está mostrando */
-#nav-list {
-    display: flex;
-}
-
-#nav-list.active {
-    display: block;
-    position: absolute;
-    top: 70px;  /* Ajusta según el alto de tu header */
-    left: 0;
-    width: 100%;
-    background: #222222;
-    text-align: center;
-    padding: 15px 0;
-    max-height: 200px;  /* Limitar la altura del menú */
-    overflow-y: auto;  /* Permitir desplazamiento si es necesario */
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); /* Sombra ligera */
-    animation: slideUp 0.5s ease-out;  /* Animación suave al abrir */
-}
-
-#nav-list li {
-    display: block;
-    padding: 8px 20px;
-    font-size: 1.1em;
-}
-
-#nav-list li a {
-    color: #EAF2F8;
-}
-
-#nav-list li a:hover {
-    color: #A3CB38;
-}
-
 /* Animaciones */
 @keyframes slideDown {
     from {
@@ -259,17 +208,6 @@ footer {
         flex-direction: column;
         gap: 10px;
         text-align: center;
-        display: none; /* Ocultar el menú por defecto en móviles */
-    }
-
-    .menu-toggle {
-        display: flex;  /* Mostrar el botón hamburguesa */
-    }
-
-    #nav-list.active {
-        display: block; /* Mostrar el menú cuando se activa */
-        max-height: 200px; /* Menú más pequeño */
-        padding: 10px 0;
     }
 
     .container {
@@ -310,4 +248,3 @@ footer {
         max-width: 400px;
     }
 }
-
